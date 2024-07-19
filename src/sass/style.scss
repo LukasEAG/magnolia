@@ -1,0 +1,866 @@
+@use '../sass/media';
+@use '../sass/colors' as *;
+
+@font-face {
+	font-family: 'HoneyScriptLight';
+	src: url(/fonts/HoneyScript-Light.ttf);
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	font-family: 'Ibarra Real Nova', serif;
+	scroll-behavior: smooth;
+	transition-delay: 1s;
+	height: 100%;
+}
+
+main {
+	position: relative;
+	top: 105px;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1440px;
+	overflow-x: clip;
+}
+
+h2 {
+	font-family: 'Lilita One', sans-serif;
+	font-size: 4.2rem;
+	font-weight: 400;
+	color: $magnolia-grey;
+}
+
+h3 {
+	font-family: 'Ibarra Real Nova', serif;
+	font-size: 2rem;
+	font-weight: 100;
+}
+
+.nav {
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+
+	&__bar {
+		display: flex;
+		align-items: center;
+		top: 0;
+		background-color: $magnolia-white;
+		height: 105px;
+	}
+
+	&__bar-box {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		height: 65px;
+		background-color: $magnolia-pink-light;
+	}
+
+	&__bar-logo {
+		display: flex;
+		justify-content: center;
+		margin-left: 5em;
+		width: 15%;
+
+		& img {
+			width: 130px;
+			height: auto;
+		}
+	}
+
+	&__bar-menu {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 70%;
+		height: 100%;
+	}
+	&__bar-items {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		width: 50%;
+		list-style: none;
+	}
+
+	&__bar-item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		font-size: 1.8rem;
+		transition: background-color 0.4s;
+
+		& a {
+			padding: 0.5em;
+			text-decoration: none;
+			color: black;
+		}
+	}
+
+	&__bar-item:has(a:hover) {
+		background-color: $magnolia-white;
+	}
+
+	&__bar-others {
+		margin-right: 5em;
+		display: flex;
+		width: 15%;
+		height: 100%;
+
+		& a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+			text-decoration: none;
+
+		}
+	}
+
+	&__bar-location {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0 1em;
+		height: 100%;
+		background-color: $magnolia-magnolia;
+		color: $magnolia-dark;
+		transition: background-color 0.4s;
+
+		& a {
+			font-size: 3.6rem;
+			color: $magnolia-dark;
+			background-color: transparent;
+			cursor: pointer;
+			transition: color 0.4s;
+		}
+
+		&:hover {
+			color: $magnolia-black;
+			background-color: $magnolia-white;
+		}
+	}
+
+	&__bar-reservation {
+		display: flex;
+		align-items: center;
+		padding: 0 1.2em;
+		height: 100%;
+		background-color: $magnolia-dark;
+		transition: background-color 0.4s;
+
+		& a {
+			font-size: 1.6rem;
+			font-family: 'Ibarra Real Nova';
+			text-transform: uppercase;
+			color: $magnolia-magnolia;
+			cursor: pointer;
+			transition: color 0.4s;
+
+			&:hover {
+				color: $magnolia-black;
+			}
+		}
+
+		&:hover {
+			background-color: $magnolia-white;
+		}
+	}
+}
+
+.head {
+	position: relative;
+	top: 105px;
+
+	&__box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__hero {
+		position: relative;
+		max-width: 1440px;
+		max-height: 677px;
+		overflow: hidden;
+
+		& img {
+			object-fit: contain;
+			width: 100%;
+			height: auto;
+		}
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			max-width: 1440px;
+			width: 100%;
+			height: 100%;
+			background: rgb(251, 213, 212);
+			background: linear-gradient(135deg, rgba(251, 213, 212, 1) 6%, rgba(241, 239, 222, 1) 78%);
+			opacity: 0.2;
+			content: '';
+		}
+	}
+
+	&__h1 {
+		position: absolute;
+		padding: 0em 2em;
+		display: flex;
+		align-items: center;
+		height: 15%;
+		font-family: 'HoneyScriptLight', serif;
+		font-size: 5rem;
+		color: $magnolia-pink-light;
+		background-color: rgba($magnolia-pink, 0.7);
+
+		& h1 {
+			text-shadow: 3px 1px 9px $magnolia-black;
+			letter-spacing: 5px;
+		}
+	}
+}
+
+.about-us {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+
+	&__bg-img {
+		position: absolute;
+		top: 0;
+		left: -140px;
+		rotate: 90deg;
+		transform: scaleX(-1);
+		max-height: 865px;
+		max-width: 603px;
+		opacity: 0.2;
+		z-index: -10;
+	}
+
+	&__title {
+		position: relative;
+		margin: 10em 0 5em 10em;
+		display: flex;
+		align-self: start;
+
+		& h2 {
+			padding-right: 1em;
+			border-bottom: 2px solid $magnolia-pink;
+		}
+	}
+
+	&__icons {
+		position: relative;
+		display: flex;
+		justify-content: space-evenly;
+		width: 100%;
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 5em;
+	}
+
+	&__items-img {
+		margin-bottom: 1em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100px;
+		height: 100px;
+		background-color: $magnolia-magnolia;
+		border-radius: 50%;
+
+		& img {
+			max-width: 65px;
+		}
+
+		&.odd {
+			background-color: $magnolia-pink-light;
+		}
+	}
+
+	&__content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 3em 10em 0;
+
+		& p {
+			font-size: 1.8rem;
+			text-align: justify;
+		}
+	}
+}
+
+.rooms {
+	position: relative;
+	padding: 5em 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&__bg-img {
+		position: absolute;
+		bottom: -70px;
+		right: -110px;
+		max-width: 500px;
+		height: auto;
+		opacity: 0.2;
+		z-index: -10;
+	}
+
+	&__title {
+		margin: 3em 0;
+		padding-top: 5em;
+
+		& h2 {
+			padding: 0 1em;
+			border-bottom: 2px solid $magnolia-magnolia;
+		}
+	}
+	&__offer {
+		margin: 0 10em;
+		padding: 0 0 5em 5em;
+		display: flex;
+		flex-direction: column;
+		align-self: self-start;
+
+		& h3 {
+			margin-bottom: 1em;
+			font-weight: 800;
+		}
+
+		& span {
+			margin-top: 1em;
+			font-size: 1.8rem;
+		}
+	}
+
+	&__offer-list {
+		list-style: none;
+	}
+
+	&__offer-list-item {
+		font-size: 1.8rem;
+	}
+	&__gallery {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__gallery {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__gallery-box {
+		position: relative;
+		width: 100%;
+		max-width: 600px;
+
+		& img {
+			padding: 0 0.5em;
+			border-radius: 5px;
+		}
+
+		& div {
+			position: absolute;
+		}
+
+		& button {
+			padding: 0.5em 0.8em;
+			background-color: $magnolia-magnolia;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: all 0.4s;
+
+			&:hover {
+				background-color: $magnolia-white;
+				transform: scale(0.9);
+			}
+		}
+	}
+
+	&__room-one {
+		top: 25%;
+		left: 38%;
+	}
+
+	&__room-two {
+		top: 25%;
+		left: 5%;
+	}
+	&__room-three {
+		top: 25%;
+		right: 5%;
+	}
+	&__room-four {
+		top: 50%;
+		left: 5%;
+	}
+	&__kitchen {
+		top: 50%;
+		right: 10%;
+	}
+	&__bathroom {
+		top: 50%;
+		left: 35%;
+	}
+	&__entrance {
+		top: 84%;
+		left: 10%;
+	}
+
+	&__gallery-zoom {
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100vw;
+		height: 100vh;
+		background: rgba(0, 0, 0, 0.9);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.2s;
+		z-index: 150;
+
+		&.show {
+			opacity: 1;
+			pointer-events: all;
+		}
+	}
+
+	&__gallery-zoom-title {
+		& span {
+			font-size: 3rem;
+			color: $magnolia-white;
+		}
+	}
+
+	&__gallery-zoom-box {
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		height: 75%;
+		width: 100%;
+
+		& button {
+			position: relative;
+			padding: 0.1em 0.3em;
+			font-size: 4rem;
+			color: $magnolia-black;
+			background-color: $magnolia-magnolia;
+			border: none;
+			border-radius: 50%;
+			transition: transform 0.4s;
+			cursor: pointer;
+			z-index: 2;
+
+			&.prev {
+				left: -1em;
+			}
+
+			&.next {
+				right: -1em;
+			}
+
+			&:hover {
+				transform: scale(0.9);
+			}
+		}
+	}
+
+	&__gallery-zoom-list {
+		position: relative;
+		width: 100%;
+		max-width: 700px;
+
+		& img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			display: block;
+			max-height: 700px;
+			max-width: 700px;
+			opacity: 0;
+			transition: opacity 0.4s;
+
+			&[data-active] {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__gallery-close-btn {
+		position: absolute;
+		top: 2em;
+		right: 5em;
+
+		& button {
+			padding: 0.5em;
+			font-size: 3.6rem;
+			color: $magnolia-magnolia;
+			background-color: transparent;
+			border: none;
+			transition: transform 0.4s;
+			cursor: pointer;
+
+			&:hover {
+				transform: scale(0.9);
+			}
+		}
+	}
+}
+
+.area {
+	position: relative;
+	padding: 5em 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&__title {
+		display: flex;
+		align-self: start;
+		margin: 5em 0 5em 10em;
+
+		& h2 {
+			padding-right: 1em;
+			border-bottom: 2px solid $magnolia-pink;
+		}
+	}
+
+	&__maps {
+		display: flex;
+		flex-direction: column;
+
+		padding: 3em 0;
+		width: 100%;
+	}
+
+	&__maps-big {
+		padding: 0 10em;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		gap: 1em;
+		width: 100%;
+	}
+
+	&__maps-big-box {
+		position: relative;
+		width: 55%;
+
+		& .big-map {
+			width: 100%;
+			max-width: 700px;
+			border: 1px solid $magnolia-black;
+			border-radius: 5px;
+		}
+
+		& button {
+			background-color: transparent;
+			border: none;
+
+			& img {
+				height: 30px;
+			}
+		}
+	}
+
+	&__point-magnolia {
+		position: absolute;
+		left: 49%;
+		top: 7%;
+
+		& .mapa-logo {
+			position: absolute;
+			top: 70%;
+			width: 130px;
+			border: none;
+		}
+	}
+	&__point-museum {
+		position: absolute;
+		left: 64%;
+		top: 49%;
+	}
+
+	&__point-church {
+		position: absolute;
+		left: 60%;
+		top: 54%;
+	}
+	&__point-lake {
+		position: absolute;
+		left: 27%;
+		top: 59%;
+	}
+	&__point-river {
+		position: absolute;
+		left: 54%;
+		top: 34%;
+	}
+
+	&__maps-big-cards {
+		width: 45%;
+		border: 1px solid $magnolia-black;
+		border-radius: 5px;
+		opacity: 0;
+		transition: opacity 0.4s;
+
+		&.show {
+			opacity: 1;
+		}
+	}
+
+	&__maps-big-card {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		padding: 3em 2em;
+		width: 35%;
+
+		& h3 {
+			padding-left: 1em;
+			font-size: 2.2rem;
+			text-align: center;
+		}
+
+		& p {
+			font-size: 1.3rem;
+		}
+
+		& ul {
+			padding: 1em 0 1em 2em;
+			list-style: circle;
+		}
+
+		& li {
+			font-size: 1.3rem;
+		}
+
+		& img {
+			max-width: 100px;
+		}
+	}
+
+	&__card-title {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		margin-bottom: 1.2em;
+	}
+
+	&__card-big-img-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		& img {
+			padding: 0 0.5em;
+			width: 110px;
+			height: 70px;
+		}
+	}
+	&__card-big-info-box {
+		& div {
+			padding: 0.2em 0;
+		}
+
+		& span {
+			font-size: 1.3rem;
+			vertical-align: super;
+		}
+
+		& i {
+			padding-right: 0.5em;
+			font-size: 2rem;
+		}
+
+		& a {
+			text-decoration: none;
+			color: $magnolia-black;
+		}
+	}
+
+	&__maps-small {
+		padding: 0 10em;
+		display: flex;
+		justify-content: center;
+		gap: 1em;
+		width: 100%;
+	}
+
+	&__maps-small-cards {
+		width: 55%;
+	}
+
+	&__maps-small-box {
+		position: relative;
+		width: 45%;
+		padding-top: 2em;
+
+		& .small-map {
+			width: 100%;
+			height: 100%;
+			max-width: 350px;
+			border: 1px solid $magnolia-black;
+			border-radius: 5px;
+		}
+
+		& button {
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+
+			& img {
+				height: 30px;
+			}
+		}
+	}
+	&__point-mountains {
+		position: absolute;
+		left: 25%;
+		top: 45%;
+	}
+
+	& .point-on-map {
+		transform: scale(1);
+		transition: transform 0.4s;
+		cursor: pointer;
+
+		&:hover {
+			transform: scale(2);
+		}
+	}
+}
+
+.contact {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: $magnolia-magnolia;
+
+	&__bg-img {
+		position: absolute;
+		top: -250px;
+		left: -150px;
+		max-width: 400px;
+		height: auto;
+		opacity: 0.2;
+		transform: scaleX(-1);
+	}
+
+	&__title {
+		padding: 2em;
+	}
+	&__box {
+		padding: 2em 5em;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+	}
+
+	&__logo {
+		width: 30%;
+
+		& img {
+			width: 220px;
+		}
+	}
+
+	&__info {
+		display: flex;
+		width: 70%;
+
+		& a {
+			padding: 0.2em;
+			font-size: 1.4rem;
+			text-decoration: none;
+			color: $magnolia-black;
+		}
+	}
+
+	&__info-cards {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		align-content: center;
+		flex-wrap: wrap;
+		width: 100%;
+
+		& h3 {
+			padding-bottom: 0.5em;
+			font-size: 2rem;
+			font-weight: bold;
+		}
+
+		& span {
+			padding: 0.2em 0;
+			font-size: 1.4rem;
+		}
+	}
+
+	&__media-icons {
+		& button {
+			font-size: 2.6rem;
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+		}
+	}
+
+	&__map {
+		width: 30%;
+
+		& img {
+			max-width: 250px;
+		}
+	}
+}
