@@ -1,0 +1,101 @@
+@use '../sass/colors' as *;
+
+@mixin queries {
+
+    @media (max-width: 992px){
+        
+        .nav {
+
+            &__bar {
+                height: 95px;
+            }
+
+            &__bar-logo {
+                margin-left: 3em;
+                & img {
+                    width: 100px;
+                    height: auto;
+                }
+            }
+              &__bar-menu {
+                display: none;
+            }
+
+            &__bar-item {
+                height: auto;
+            }
+
+            &__bar-others {
+                display: none;
+            }
+
+            &__mobile-menu {
+                position: relative;
+                display: block;
+                margin-right: 2em;
+
+                & button {
+                    font-size: 3rem;
+                    color: $magnolia-black;
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+
+            &__mobile-menu-list {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                width: 100vw;
+                background-color: $magnolia-white;
+                transform: translateX(-100%);
+                transition: transform .4s;
+
+                & a {
+                    text-decoration: none;
+                    font-size: 1.8rem;
+                    color: $magnolia-black;
+                    cursor: pointer;
+
+                    & :last-of-type {
+                        font-size: 4rem;
+                    }
+                }
+
+                & button {
+                    padding: .3em;
+                    position: absolute;
+                    top: 0;
+                    right: 1em;
+                    font-size: 3rem;
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                }
+
+                & img {
+                    position: absolute;
+                    top: .2em;
+                    left: .5em;
+                    max-width: 100px;
+                    height: auto;
+
+                }
+
+                &.show {
+                    transform: translateX(0);
+                }
+            }
+
+        
+
+
+        }
+    }
+}

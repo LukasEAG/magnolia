@@ -237,3 +237,33 @@ galleryBtn.forEach(button => {
 		delete activeSlide.dataset.active
 	})
 })
+
+
+// mobile menu 
+
+const openMobileMenu = document.querySelector('[data-mobile-menu-open]')
+const closeMobileMenu = document.querySelector('[data-mobile-menu-close]')
+const mobileMenu = document.querySelector('.nav__mobile-menu-list')
+const mobileMenuItems = document.querySelectorAll('.nav__bar-item')
+
+
+openMobileMenu.addEventListener('click', () => {
+    mobileMenu.classList.add('show')
+    body.style.overflowY = 'hidden'
+
+})
+
+closeMobileMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('show')
+    body.style.overflowY = 'visible'
+
+})
+
+mobileMenuItems.forEach( button => {
+    button.addEventListener('click', () => {
+        mobileMenu.classList.remove('show')
+        body.style.overflowY = 'visible'
+
+
+    })
+})
