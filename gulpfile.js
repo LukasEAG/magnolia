@@ -24,7 +24,7 @@ const paths = {
 	dist: './dist',
 	sassDest: './dist/css',
 	jsDest: './dist/js',
-	imgDest: './dist/img',
+	imgDest: './dist/img'
 }
 function sassComaipler(done) {
 	src(paths.sass)
