@@ -8,7 +8,7 @@ const cardContainer = document.createElement('div')
 const dataObject = {
 	church: {
 		title: 'Kościół św. Aleksego',
-		img: '../dist/img/miniaturkaKosciol.jpeg',
+		img: './dist/img/miniaturkaKosciol.jpeg',
 		text: 'Parafia w Przedborzu została erygowana ok. 1270. Pierwotny kościół miał powstać ok 1275 r. , jako fundacja Bolesława Wstydliwego. Miała wówczas powstać nawa główna. Budynek został rozbudowany na polecenie Kazimierza Wielkiego w 1341 r., w tym samym okresie wzniesiono na polecenie króla zamek, który nie zachował się do dziś. Pożary w XVII w. spowodowały częściowe zniszczenie świątyni, z gotyckiej budowli zachowała się wieża i część murów. Pozostała część została odbudowana w latach 1640- 1695. Dobudowano wówczas dwie kaplice. Kolejne pożary doprowadziły do zniszczenia części wieży a w konsekwencji do jej obniżenia. W r. 1885 w czasie jednej z konserwacji obiektu dobudowano zakrystię.',
 		list1: '',
 		list2: '',
@@ -27,7 +27,7 @@ const dataObject = {
 
 	museum: {
 		title: 'Muzeum Ludowe Ziemi Przedborskiej',
-		img: '../dist/img/miniaturkaMuzeum.jpg',
+		img: './dist/img/miniaturkaMuzeum.jpg',
 		text: 'Muzeum Ludowe Ziemi Przedborskiej założył nauczyciel Tadeusz Michalski, który do dziś chętnie oprowadza turystów z Polski i Świata. Muzeum mieści się w wyremontowanym XVII - wiecznym budynku dawnej karczmy przy ul. Kieleckiej. Jest jednym z najciekawszych w centralnej Polsce muzeów o charakterze mini-skansenu. Muzeum dotychczas zgromadziło ponad 9 tys. eksponatów, głównie etnograficznych i historycznych, do których należą między innymi:',
 		list1: '<li>podwórze wiejskie z wystawą dawnych narzędzi,</li>',
 		list2: '<li>kuźnia i warsztat bednarski,</li>',
@@ -45,7 +45,7 @@ const dataObject = {
 	},
 	lake: {
 		title: 'Kąpielisko nad zalewem ',
-		img: '../dist/img/miniaturkaKapielisko.jpg',
+		img: './dist/img/miniaturkaKapielisko.jpg',
 		text: 'Dla mieszkańców Przedborza i okolic przygotowano miejsce idealne na wypoczynek. Zbiornik wodny zachęca do letniego spędzenia wolnego czasu poprzez liczne atrakcje dostępne na miejscu. Każdy znajdzie tu coś dla siebie. Każdego lata jest to popularne miejsce wśród rodzin z dziećmi, jak i zorganizowanych grup znajomych. Dla miłośników plażingu i kąpieli przygotowano strzeżone kąpielisko z mnóstwem miejsca do plażowania i atrakcjami takimi jak:',
 		list1: '<li>zjeżdżalnię wodną,</li>',
 		list2: '<li>plac zabaw dla dzieci,</li>',
@@ -63,7 +63,7 @@ const dataObject = {
 	},
 	mountain: {
 		title: 'Fajna ryba - 347 m n.p.m. ',
-		img: '../dist/img/miniaturkaGora.jpg',
+		img: './dist/img/miniaturkaGora.jpg',
 		text: 'Fajna Ryba (347 m n.p.m.) jest najwyższym wzniesieniem Pasma Przedborskiego i najwyższym naturalnym wzgórzem województwa łódzkiego (wprawdzie leżąca pod Bełchatowem Góra Kamieńska ma o 39 m więcej, jednak jest wzgórzem sztucznym). W całym Paśmie Przedborsko-Małogoskim wyższa o 4 metry jest położona koło Małogoszcza Góra Sabianów. Nie prowadzi na nią jednak, przynajmniej na razie żaden szlak turystyczny. Wzgórze Fajnej Ryby jest bardzo malowniczo położone, niestety wierzchołek jest całkowicie zalesiony i nie oferuje żadnych widoków. W pobliżu wierzchołka Fajnej Ryby przebiegają żółty szlak turystyczny z Przedborza do Krasocina oraz zielony szlak turystyczny z Przedborza do Rączki. Od szlaku na szczyt jest 140 m, kierunek wskazuje strzałka',
 		list1: '',
 		list2: '',
@@ -156,38 +156,38 @@ const galleryList = document.createElement('div')
 
 const galleryObject = {
 	room1: {
-		img1: '../dist/img/room2:6One.jpg',
-		img2: '../dist/img/room2:6Two.jpg',
-		img3: '../dist/img/room2:6Three.jpg',
+		img1: './dist/img/room2:6One.jpg',
+		img2: './dist/img/room2:6Two.jpg',
+		img3: './dist/img/room2:6Three.jpg',
 	},
 	room2: {
-		img1: '../dist/img/room2:3One.jpg',
-		img2: '../dist/img/room2:3Two.jpg',
-		img3: '../dist/img/room2:3Three.jpg',
+		img1: './dist/img/room2:3One.jpg',
+		img2: './dist/img/room2:3Two.jpg',
+		img3: './dist/img/room2:3Three.jpg',
 	},
 	room3: {
-		img1: '../dist/img/room2:3OneR.jpg',
-		img2: '../dist/img/room2:3TwoR.jpg',
+		img1: './dist/img/room2:3OneR.jpg',
+		img2: './dist/img/room2:3TwoR.jpg',
 		img3: '',
 	},
 	room4: {
-		img1: '../dist/img/room2One.jpg',
-		img2: '../dist/img/room2Two.jpg',
-		img3: '../dist/img/room2Three.jpg',
+		img1: './dist/img/room2One.jpg',
+		img2: './dist/img/room2Two.jpg',
+		img3: './dist/img/room2Three.jpg',
 	},
 	bath: {
-		img1: '../dist/img/bathOne.jpg',
-		img2: '../dist/img/bathTwo.jpg',
+		img1: './dist/img/bathOne.jpg',
+		img2: './dist/img/bathTwo.jpg',
 		img3: '',
 	},
 	kitchen: {
-		img1: '../dist/img/kitchenOne.jpg',
-		img2: '../dist/img/kitchenTwo.jpg',
-		img3: '../dist/img/kitchenThree.jpg',
+		img1: './dist/img/kitchenOne.jpg',
+		img2: './dist/img/kitchenTwo.jpg',
+		img3: './dist/img/kitchenThree.jpg',
 	},
 	porch: {
-		img1: '../dist/img/porchOne.jpg',
-		img2: '../dist/img/porchTwo.jpg',
+		img1: './dist/img/porchOne.jpg',
+		img2: './dist/img/porchTwo.jpg',
 		img3: '',
 	},
 }
