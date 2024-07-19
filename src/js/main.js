@@ -249,20 +249,20 @@ const mobileMenuItems = document.querySelectorAll('.nav__bar-item')
 
 openMobileMenu.addEventListener('click', () => {
     mobileMenu.classList.add('show')
-    body.style.overflowY = 'hidden'
+    body.style.overflow = 'hidden'
 
 })
 
 closeMobileMenu.addEventListener('click', () => {
     mobileMenu.classList.remove('show')
-    body.style.overflowY = 'visible'
+    body.style.overflow = 'visible'
 
 })
 
 mobileMenuItems.forEach( button => {
     button.addEventListener('click', () => {
         mobileMenu.classList.remove('show')
-        body.style.overflowY = 'visible'
+        body.style.overflow = 'visible'
 
 
     })
