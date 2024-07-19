@@ -92,10 +92,35 @@
                     transform: translateX(0);
                 }
             }
+        }
 
+        .head {
+    
+            &__h1 {
+                padding: 0 1.2em;
+                font-size: 4rem;
+            }
+        }
+
+    }
+
+    @media (max-width: 566px) {
+        .head {
+    
+            &__h1 {
+                padding: 0 1em;
+                font-size: 2.2rem;
+            }
+        }
+    }
+    @media (max-width: 320px) {
         
-
-
+        .head {
+    
+            &__h1 {
+                padding: 0 1em;
+                font-size: 1.8rem;
+            }
         }
     }
 }
