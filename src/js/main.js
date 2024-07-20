@@ -244,12 +244,25 @@ galleryBtn.forEach(button => {
 const burgerBtn = document.querySelector('[data-burger-btn]')
 const closeMobileBtn = document.querySelector('[data-mobile-close-btn]')
 const mobileMenu = document.querySelector('[data-mobile-menu]')
+const mobileMenuItems = document.querySelectorAll('.nab__mobile-menu-item')
 
 
 burgerBtn.addEventListener('click', () => {
     mobileMenu.classList.add('show')
+    body.style.overflowY = 'hidden'
+
 })
 
 closeMobileBtn.addEventListener('click', () => {
     mobileMenu.classList.remove('show')
+    body.style.overflowY = 'visible'
+
+})
+
+mobileMenuItems.forEach( button => {
+    button.addEventListener('click', () => {
+        mobileMenu.classList.remove('show')
+        body.style.overflowY = 'visible'
+
+    })
 })
