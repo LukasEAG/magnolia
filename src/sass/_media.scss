@@ -1,128 +1,100 @@
 @use '../sass/colors' as *;
 
 @mixin queries {
+	@media (max-width: 992px) {
+		.nav {
+			&__bar {
+				height: 95px;
+			}
 
-    @media (max-width: 992px){
-        
-        .nav {
+			&__bar-logo {
+				margin-left: 3em;
+				& img {
+					width: 100px;
+					height: auto;
+				}
+			}
+			&__bar-menu {
+				display: none;
+			}
 
-            &__bar {
-                height: 95px;
-            }
+			&__bar-others {
+				display: none;
+			}
 
-            &__bar-logo {
-                margin-left: 3em;
-                & img {
-                    width: 100px;
-                    height: auto;
-                }
-            }
-              &__bar-menu {
-                display: none;
-            }
+			&__bar-burger-menu {
+				display: block;
+                margin-right: 1.2em;
 
-            &__bar-item {
-                height: auto;
-            }
-
-            &__bar-others {
-                display: none;
-            }
-
-            &__mobile-menu {
-                position: relative;
-                display: block;
-                margin-right: 2em;
-
-
-                & button {
+				& button {
                     font-size: 3rem;
-                    color: $magnolia-black;
                     background-color: transparent;
                     border: none;
                     cursor: pointer;
-                }
-            }
+				}
+			}
 
-            &__mobile-menu-list {
-                position: absolute;
-                top: 0;
-                left: 0;
+			&__menu-mobile {
+				position: absolute;
+				top: 0;
+				left: 0;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                width: 100vw;
-                background-color: $magnolia-white;
-               transform: translateX(-100%);
+				height: 100vh;
+				width: 100vw;
+				background-color: $magnolia-white;
+				transform: translateX(-100%);
                 transition: transform .4s;
-                z-index: 25;
-
-                & a {
-                    text-decoration: none;
-                    font-size: 1.8rem;
-                    color: $magnolia-black;
-                    cursor: pointer;
-
-                    & :last-of-type {
-                        font-size: 4rem;
-                    }
-                }
-
-                & button {
-                    padding: .3em;
-                    position: absolute;
-                    top: 0;
-                    right: 1em;
-                    font-size: 3rem;
-                    background-color: transparent;
-                    border: none;
-                    cursor: pointer;
-                }
-
-                & img {
-                    position: absolute;
-                    top: .2em;
-                    left: .5em;
-                    max-width: 100px;
-                    height: auto;
-
-                }
 
                 &.show {
                     transform: translateX(0);
                 }
-            }
-        }
+			}
 
-        .head {
-    
-            &__h1 {
-                padding: 0 1.2em;
-                font-size: 4rem;
-            }
-        }
+			&__menu-mobile-head {
+				margin-top: 1em;
+				padding: 0 1em;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
 
-    }
+				& img {
+					width: 100px;
+					height: auto;
+				}
 
-    @media (max-width: 566px) {
-        .head {
-    
-            &__h1 {
-                padding: 0 1em;
-                font-size: 2.2rem;
-            }
-        }
-    }
-    @media (max-width: 320px) {
-        
-        .head {
-    
-            &__h1 {
-                padding: 0 1em;
-                font-size: 1.8rem;
-            }
-        }
-    }
+				& button {
+					margin-right: 0.2em;
+					font-size: 3.6rem;
+					background-color: transparent;
+					border: none;
+					cursor: pointer;
+				}
+			}
+		}
+
+		.head {
+			&__h1 {
+				padding: 0 1.2em;
+				font-size: 4rem;
+			}
+		}
+	}
+
+	@media (max-width: 566px) {
+		.head {
+			&__h1 {
+				padding: 0 1em;
+				font-size: 2.2rem;
+			}
+		}
+	}
+	@media (max-width: 320px) {
+		.head {
+			&__h1 {
+				padding: 0 1em;
+				font-size: 1.8rem;
+			}
+		}
+	}
 }
