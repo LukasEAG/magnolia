@@ -291,7 +291,12 @@ h3 {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		margin-bottom: 5em;
+		margin: 0 1em 5em;
+		width: 33%;
+
+		& h3 {
+			text-align: center;
+		}
 	}
 
 	&__items-img {
@@ -299,13 +304,12 @@ h3 {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 100px;
-		height: 100px;
 		background-color: $magnolia-magnolia;
 		border-radius: 50%;
 
 		& img {
-			max-width: 65px;
+			padding: 2em;
+			max-width: 85px;
 		}
 
 		&.odd {
@@ -482,12 +486,12 @@ h3 {
 	}
 
 	&__gallery-zoom-box {
+		padding: 0 1em;
 		position: relative;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
-		height: 75%;
 		width: 100%;
 
 		& button {
@@ -503,11 +507,11 @@ h3 {
 			z-index: 2;
 
 			&.prev {
-				left: -1em;
+				margin-right: .3em;
 			}
 
 			&.next {
-				right: -1em;
+				margin-left: .3em;
 			}
 
 			&:hover {
@@ -529,6 +533,8 @@ h3 {
 			display: block;
 			max-height: 700px;
 			max-width: 700px;
+			width: 100%;
+			height: auto;
 			opacity: 0;
 			transition: opacity 0.4s;
 
@@ -541,7 +547,7 @@ h3 {
 	&__gallery-close-btn {
 		position: absolute;
 		top: 2em;
-		right: 5em;
+		right: 2%;
 
 		& button {
 			padding: 0.5em;
@@ -810,6 +816,7 @@ h3 {
 
 	&__title {
 		padding: 2em;
+		z-index: 2;
 	}
 	&__box {
 		padding: 2em 5em;
@@ -818,6 +825,7 @@ h3 {
 		justify-content: center;
 		align-items: center;
 		width: 100%;
+		z-index: 2;
 	}
 
 	&__logo {
