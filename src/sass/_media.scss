@@ -1,6 +1,68 @@
 @use '../sass/colors' as *;
 
 @mixin queries {
+	@media (max-width: 1200px) {
+		.about-us {
+			&__title {
+				margin: 10em 0 5em 4em;
+			}
+			&__content {
+				margin: 3em 4em 0;
+			}
+		}
+		.rooms {
+			&__offer {
+				margin: 0 4em;
+			}
+		}
+		.area {
+			&__title {
+				margin: 5em 0 5em 4em;
+			}
+			&__text {
+				margin: 0 4em;
+				padding: 0;
+			}
+			&__maps-big {
+				padding: 0 4em;
+			}
+
+			&__maps-big-card {
+				padding: 1em 1em;
+				width: 40%;
+			}
+		}
+	}
+	@media (max-width: 1100px) {
+		.about-us {
+			&__title {
+				margin: 10em 0 5em 2em;
+			}
+			&__content {
+				margin: 3em 2em 0;
+			}
+		}
+		.rooms {
+			&__offer {
+				margin: 0 2em;
+			}
+		}
+		.area {
+			&__title {
+				margin: 5em 0 5em 2em;
+			}
+			&__text {
+				margin: 0 2em;
+				padding: 0;
+			}
+			&__maps-big {
+				padding: 0 2em;
+			}
+			&__maps-big-card {
+				width: 42%;
+			}
+		}
+	}
 	@media (max-width: 992px) {
 		h2 {
 			padding: 0 0.6em;
@@ -120,25 +182,21 @@
 			}
 		}
 
-        .area {
-
-            &__title {
-                margin: 5em 0;
-                justify-content: center;
-                width: 100%;
-            }
-        }
+		.area {
+			&__title {
+				margin: 5em 0;
+				justify-content: center;
+				width: 100%;
+			}
+		}
 	}
-    @media (max-width: 769px) {
-
-        .contact {
-            
-            &__box {
-                flex-direction: column-reverse;
-
-            }
-        }
-    }
+	@media (max-width: 769px) {
+		.contact {
+			&__box {
+				flex-direction: column-reverse;
+			}
+		}
+	}
 
 	@media (max-width: 560px) {
 		.head {
@@ -148,19 +206,18 @@
 			}
 		}
 
-        .contact {
-
-            &__box {
-                padding: 2em;
-            }
-            &__info {
-                margin: 2em 0;
-            }
-        }
+		.contact {
+			&__box {
+				padding: 2em;
+			}
+			&__info {
+				margin: 2em 0;
+			}
+		}
 	}
 
 	@media (max-width: 480px) {
-        .head {
+		.head {
 			&__h1 {
 				padding: 0 1em;
 				font-size: 2.2rem;
@@ -181,26 +238,38 @@
 				}
 			}
 
-            &__content {
-                margin: 1em 3em 0;
-            }
+			&__content {
+				margin: 1em 3em 0;
+			}
 		}
 
+		.rooms {
+			&__bg-img {
+				opacity: 0.1;
+				max-width: 300px;
+			}
+			&__offer {
+				margin: 0 3em;
+			}
 
-        .rooms {
+			&__gallery-box {
+				& button {
+					padding: .4em 0.6em;
+					max-width: 110px;
 
-            &__offer {
-                margin: 0 3em;
-            }
-        }
+					& span {
+						font-size: .8rem;
+					}
+				}
+			}
+		}
 
-        .area {
-
-            &__text {
-                margin: 0 3em;
-                padding: 0;
-            }
-        }
+		.area {
+			&__text {
+				margin: 0 3em;
+				padding: 0;
+			}
+		}
 
 		.contact {
 			&__box {
@@ -212,14 +281,14 @@
 			&__map {
 				margin: 1em 0;
 				display: flex;
-                flex-direction: column;
+				flex-direction: column;
 				justify-content: center;
-                align-items: center;
+				align-items: center;
 				width: 100%;
 			}
 
 			&__info-cards {
-                margin: 1.2em 0;
+				margin: 1.2em 0;
 				align-items: center;
 			}
 		}
@@ -231,9 +300,11 @@
 			text-align: center;
 		}
 
-        p, li, span {
-            font-size: 1.4rem;
-        }
+		p,
+		li,
+		span {
+			font-size: 1.4rem;
+		}
 		.head {
 			&__h1 {
 				padding: 0 1em;
@@ -253,8 +324,6 @@
 
 			&__content {
 				margin: 1em 2em 0;
-
-			
 			}
 
 			&__items {
@@ -305,9 +374,9 @@
 				margin: 2em 0;
 			}
 
-            &__text {
-                margin: 0 2em;
-            }
+			&__text {
+				margin: 0 2em;
+			}
 		}
 	}
 }

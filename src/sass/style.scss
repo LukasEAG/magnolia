@@ -455,37 +455,41 @@ a {
 				background-color: $magnolia-white;
 				transform: scale(0.9);
 			}
+
+			& span {
+				font-size: 1.2rem;
+			}
 		}
 	}
 
 	&__room-one {
 		top: 25%;
-		left: 38%;
+		left: 39%;
 	}
 
 	&__room-two {
 		top: 25%;
-		left: 5%;
+		left: 7%;
 	}
 	&__room-three {
 		top: 25%;
-		right: 5%;
+		right: 7%;
 	}
 	&__room-four {
 		top: 50%;
-		left: 5%;
+		left: 6%;
 	}
 	&__kitchen {
 		top: 50%;
-		right: 10%;
+		right: 11%;
 	}
 	&__bathroom {
 		top: 50%;
 		left: 35%;
 	}
 	&__entrance {
-		top: 84%;
-		left: 10%;
+		top: 80%;
+		left: 7%;
 	}
 
 	&__gallery-zoom {
