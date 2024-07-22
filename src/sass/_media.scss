@@ -2,6 +2,10 @@
 
 @mixin queries {
 	@media (max-width: 992px) {
+		h2 {
+			padding: 0 0.6em;
+		}
+
 		.nav {
 			&__bar {
 				height: 95px;
@@ -110,27 +114,58 @@
 			&__title {
 				margin: 5em 0;
 				align-self: center;
-
-				& h2 {
-					padding: 0 0.6em;
-				}
 			}
 			&__content {
 				margin: 1em 5em 0;
 			}
 		}
+
+        .area {
+
+            &__title {
+                margin: 5em 0;
+                justify-content: center;
+                width: 100%;
+            }
+        }
 	}
+    @media (max-width: 769px) {
+
+        .contact {
+            
+            &__box {
+                flex-direction: column-reverse;
+
+            }
+        }
+    }
 
 	@media (max-width: 560px) {
 		.head {
 			&__h1 {
 				padding: 0 1em;
-				font-size: 2.2rem;
+				font-size: 3.2rem;
 			}
 		}
+
+        .contact {
+
+            &__box {
+                padding: 2em;
+            }
+            &__info {
+                margin: 2em 0;
+            }
+        }
 	}
 
 	@media (max-width: 480px) {
+        .head {
+			&__h1 {
+				padding: 0 1em;
+				font-size: 2.2rem;
+			}
+		}
 		.about-us {
 			&__icons {
 				flex-direction: column;
@@ -145,29 +180,60 @@
 					font-size: 1.8rem;
 				}
 			}
+
+            &__content {
+                margin: 1em 3em 0;
+            }
 		}
+
+
+        .rooms {
+
+            &__offer {
+                margin: 0 3em;
+            }
+        }
+
+        .area {
+
+            &__text {
+                margin: 0 3em;
+                padding: 0;
+            }
+        }
 
 		.contact {
 			&__box {
-				flex-direction: column;
-                padding: 0 1em;
+				padding: 0 1em;
 			}
 
 			&__info,
 			&__logo,
 			&__map {
-                margin: 1em 0;
-                display: flex;
-                justify-content: center;
+				margin: 1em 0;
+				display: flex;
+                flex-direction: column;
+				justify-content: center;
+                align-items: center;
 				width: 100%;
 			}
 
-            &__info-cards {
-                align-items: center;
-            }
+			&__info-cards {
+                margin: 1.2em 0;
+				align-items: center;
+			}
 		}
 	}
 	@media (max-width: 320px) {
+		h2 {
+			padding: 0 1em;
+			font-size: 3.2rem;
+			text-align: center;
+		}
+
+        p, li, span {
+            font-size: 1.4rem;
+        }
 		.head {
 			&__h1 {
 				padding: 0 1em;
@@ -188,9 +254,7 @@
 			&__content {
 				margin: 1em 2em 0;
 
-				& p {
-					font-size: 1.4rem;
-				}
+			
 			}
 
 			&__items {
@@ -198,6 +262,12 @@
 
 				& h3 {
 					font-size: 1.6rem;
+				}
+			}
+
+			&__items-img {
+				& img {
+					max-width: 70px;
 				}
 			}
 		}
@@ -228,6 +298,16 @@
 					font-size: 3rem;
 				}
 			}
+		}
+
+		.area {
+			&__title {
+				margin: 2em 0;
+			}
+
+            &__text {
+                margin: 0 2em;
+            }
 		}
 	}
 }

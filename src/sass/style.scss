@@ -47,6 +47,17 @@ h3 {
 	font-weight: 100;
 }
 
+p,
+span,
+li {
+	font-size: 1.8rem;
+}
+
+a {
+	color: $magnolia-black;
+	text-decoration: none;
+}
+
 .nav {
 	position: fixed;
 	width: 100%;
@@ -130,7 +141,6 @@ h3 {
 			align-items: center;
 			height: 100%;
 			text-decoration: none;
-
 		}
 	}
 
@@ -319,13 +329,35 @@ h3 {
 
 	&__content {
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		margin: 3em 10em 0;
 
+		& a {
+			font-weight: 700;
+		}
+
 		& p {
-			font-size: 1.8rem;
+			margin: .5em 0;
 			text-align: justify;
+			text-indent: 3ch;
+		}
+
+		& span {
+			margin: .2em 0;
+			font-weight: 700;
+
+			
+		}
+
+		& span:last-of-type {
+			margin-bottom: 1em;
+		}
+
+		.last {
+			margin-top: 1em;
+			font-weight: 700;
 		}
 	}
 }
@@ -342,7 +374,8 @@ h3 {
 		position: absolute;
 		bottom: -70px;
 		right: -110px;
-		max-width: 500px;
+		max-width: 400px;
+		width: 100%;
 		height: auto;
 		opacity: 0.2;
 		z-index: -10;
@@ -350,7 +383,6 @@ h3 {
 
 	&__title {
 		margin: 3em 0;
-		padding-top: 5em;
 
 		& h2 {
 			padding: 0 1em;
@@ -371,7 +403,6 @@ h3 {
 
 		& span {
 			margin-top: 1em;
-			font-size: 1.8rem;
 		}
 	}
 
@@ -413,6 +444,7 @@ h3 {
 
 		& button {
 			padding: 0.5em 0.8em;
+			color: $magnolia-black;
 			background-color: $magnolia-magnolia;
 			border: none;
 			border-radius: 5px;
@@ -507,16 +539,17 @@ h3 {
 			z-index: 2;
 
 			&.prev {
-				margin-right: .3em;
+				margin-right: 0.3em;
 			}
 
 			&.next {
-				margin-left: .3em;
+				margin-left: 0.3em;
 			}
 
 			&:hover {
 				transform: scale(0.9);
 			}
+
 		}
 	}
 
@@ -587,9 +620,6 @@ h3 {
 	&__text {
 		margin-left: 10em;
 		padding-right: 5em;
-		& span {
-			font-size: 1.8rem;
-		}
 	}
 
 	&__maps {
@@ -809,6 +839,7 @@ h3 {
 		top: -250px;
 		left: -150px;
 		max-width: 400px;
+		width: 100%;
 		height: auto;
 		opacity: 0.2;
 		transform: scaleX(-1);
@@ -821,25 +852,31 @@ h3 {
 	&__box {
 		padding: 2em 5em;
 		display: flex;
-		flex-direction: row;
+		flex-direction: row-reverse;
 		justify-content: center;
 		align-items: center;
+		flex-wrap: wrap-reverse;
 		width: 100%;
 		z-index: 2;
 	}
 
 	&__logo {
-		width: 30%;
-
+		margin: 2em 0;
+		display: flex;
+		justify-content: center;
+		flex-grow: 1;
 		& img {
-			width: 220px;
+			max-width: 220px;
+			width: 100%;
+			height: auto;
 		}
 	}
 
 	&__info {
+		margin: 2em;
 		display: flex;
-		width: 70%;
-
+		justify-content: space-around;
+		flex-grow: 3;
 		& a {
 			padding: 0.2em;
 			font-size: 1.4rem;
@@ -849,13 +886,12 @@ h3 {
 	}
 
 	&__info-cards {
+		margin: 0 1em;
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: flex-start;
 		align-content: center;
-		flex-wrap: wrap;
-		width: 100%;
 
 		& h3 {
 			padding-bottom: 0.5em;
@@ -870,22 +906,29 @@ h3 {
 	}
 
 	&__media-icons {
-		& button {
+		& a {
 			font-size: 2.6rem;
 			background-color: transparent;
 			border: none;
 			cursor: pointer;
 		}
+
+
 	}
 
 	&__map {
-		width: 30%;
+		margin: 2em 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-grow: 1;
 
 		& img {
 			max-width: 250px;
+			width: 100%;
+			height: auto;
 		}
 	}
 }
 
-
-@include media.queries
+@include media.queries;
