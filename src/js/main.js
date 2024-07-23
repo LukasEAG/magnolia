@@ -2,6 +2,8 @@
 
 const mapPoint = document.querySelectorAll('.point-on-map')
 const mapsCardsBox = document.querySelector('.area__maps-big-cards')
+const mobileMapsCard = document.querySelector('.area__maps-cards-mobile')
+const areaBgImg = document.querySelector('.area__bg-img')
 
 const cardContainer = document.createElement('div')
 
@@ -79,6 +81,26 @@ const dataObject = {
 		webLink: 'https://kgs.info.pl/fajna-ryba',
 		webLinkName: 'Korona Gór Świętokrzyskich - Fajna Ryba',
 	},
+
+    river: {
+        title: 'Spływ kajakowy - Pilicą',
+        img: './dist/img/splyw.jpg',
+        text: 'Spływy kajakowe rzeką Pilicą w Przedborzu to niezapomniana przygoda, która łączy w sobie piękno przyrody, aktywny wypoczynek i odrobinę adrenaliny. Rzeka Pilica, będąca jedną z najdłuższych rzek w Polsce, przepływa przez malownicze tereny, oferując kajakarzom niezapomniane widoki i wrażenia. Trasa spływu jest różnorodna i pełna niespodzianek. Kajakarze mogą podziwiać liczne zakola, wyspy i piaszczyste plaże, które zachęcają do krótkich przerw i odpoczynku. Organizatorzy spływów oferują różne opcje tras, od kilkugodzinnych wycieczek po kilkudniowe wyprawy.',
+        list1: '',
+		list2: '',
+		list3: '',
+		list4: '',
+		list5: '',
+		list6: '',
+		adress1: '',
+		adress2: 'Przedbórz',
+		houersWeek: 'Całą dobe',
+		houersSat: 'Całą dobe',
+		houersSun: 'Całą dobe',
+		webLink: 'https://meandrypilicy.pl/oferta-splywy-kajakowe-lodzkie/splywy-kajakowe/przedborz-leg-reczynski',
+		webLinkName: 'Spływy Kajakowe Przedbórz',
+
+    }
 }
 
 const cardBody = body => {
@@ -124,14 +146,30 @@ const createCard = value => {
 	setTimeout(function () {
 		cardContainer.className = 'area__maps-big-card'
 		cardContainer.innerHTML = cardBody(value)
-		mapsCardsBox.appendChild(cardContainer)
-		mapsCardsBox.classList.add('show')
+
+        if(window.innerWidth > 992) {
+
+            mapsCardsBox.appendChild(cardContainer)
+            mapsCardsBox.classList.add('show')
+        } else {
+            mobileMapsCard.appendChild(cardContainer)
+            mobileMapsCard.classList.add('show')
+            areaBgImg.classList.add('opacity')
+
+        }
 	}, 400)
 }
 
 mapPoint.forEach(point => {
 	point.addEventListener('click', () => {
-		mapsCardsBox.classList.remove('show')
+
+        if (window.innerWidth > 992) {
+
+            mapsCardsBox.classList.remove('show')
+        } else {
+            mobileMapsCard.classList.remove('show')
+            areaBgImg.classList.remove('opacity')
+        }
 		cardContainer.remove()
 		mapsCardsBox.scrollTop = 0
 
@@ -238,31 +276,26 @@ galleryBtn.forEach(button => {
 	})
 })
 
-
-// mobile menu 
+// mobile menu
 
 const burgerBtn = document.querySelector('[data-burger-btn]')
 const closeMobileBtn = document.querySelector('[data-mobile-close-btn]')
 const mobileMenu = document.querySelector('[data-mobile-menu]')
 const mobileMenuItems = document.querySelectorAll('.nav__mobile-menu-item')
 
-
 burgerBtn.addEventListener('click', () => {
-    mobileMenu.classList.add('show')
-    body.style.overflowY = 'hidden'
-
+	mobileMenu.classList.add('show')
+	body.style.overflowY = 'hidden'
 })
 
 closeMobileBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('show')
-    body.style.overflowY = 'visible'
-
+	mobileMenu.classList.remove('show')
+	body.style.overflowY = 'visible'
 })
 
-mobileMenuItems.forEach( button => {
-    button.addEventListener('click', () => {
-        mobileMenu.classList.remove('show')
-        body.style.overflowY = 'visible'
-
-    })
+mobileMenuItems.forEach(button => {
+	button.addEventListener('click', () => {
+		mobileMenu.classList.remove('show')
+		body.style.overflowY = 'visible'
+	})
 })

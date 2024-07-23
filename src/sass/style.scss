@@ -27,6 +27,11 @@ main {
 	top: 105px;
 }
 
+section {
+	scroll-margin-top: 95px;
+	margin: 0;
+}
+
 .wrapper {
 	margin: 0 auto;
 	width: 100%;
@@ -258,6 +263,7 @@ a {
 }
 
 .about-us {
+	padding: 2em 0;
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -279,7 +285,7 @@ a {
 
 	&__title {
 		position: relative;
-		margin: 10em 0 5em 10em;
+		margin: 3em 0 5em 10em;
 		display: flex;
 		align-self: start;
 
@@ -363,8 +369,8 @@ a {
 }
 
 .rooms {
+	padding:2em 0;
 	position: relative;
-	padding: 5em 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -531,14 +537,16 @@ a {
 		width: 100%;
 
 		& button {
+			display: flex;
 			position: relative;
-			padding: 0.1em 0.3em;
+			padding:  0.3em;
 			font-size: 4rem;
 			color: $magnolia-black;
 			background-color: $magnolia-magnolia;
 			border: none;
 			border-radius: 50%;
 			transition: transform 0.4s;
+			white-space: nowrap;
 			cursor: pointer;
 			z-index: 2;
 
@@ -560,7 +568,7 @@ a {
 	&__gallery-zoom-list {
 		position: relative;
 		width: 100%;
-		max-width: 700px;
+		max-width: 800px;
 
 		& img {
 			position: absolute;
@@ -568,8 +576,8 @@ a {
 			left: 50%;
 			transform: translate(-50%, -50%);
 			display: block;
-			max-height: 700px;
-			max-width: 700px;
+			max-height: 800px;
+			max-width: 800px;
 			width: 100%;
 			height: auto;
 			opacity: 0;
@@ -604,7 +612,7 @@ a {
 
 .area {
 	position: relative;
-	padding: 5em 0;
+	padding: 2em 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -613,7 +621,7 @@ a {
 	&__title {
 		display: flex;
 		align-self: start;
-		margin: 5em 0 5em 10em;
+		margin: 3em 0 5em 10em;
 
 		& h2 {
 			padding-right: 1em;
@@ -637,7 +645,7 @@ a {
 		padding: 0 10em;
 		position: relative;
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		gap: 1em;
 		width: 100%;
 	}
@@ -648,7 +656,7 @@ a {
 
 		& .big-map {
 			width: 100%;
-			max-width: 700px;
+			height: 100%;
 			border: 1px solid $magnolia-black;
 			border-radius: 5px;
 		}
@@ -667,11 +675,12 @@ a {
 		position: absolute;
 		left: 49%;
 		top: 7%;
+		width: 20%;
 
 		& .mapa-logo {
 			position: absolute;
 			top: 70%;
-			width: 130px;
+			width: 100%;
 			border: none;
 		}
 	}
@@ -679,6 +688,7 @@ a {
 		position: absolute;
 		left: 64%;
 		top: 49%;
+		width: 10%;
 	}
 
 	&__point-church {
@@ -698,7 +708,10 @@ a {
 	}
 
 	&__maps-big-cards {
-		width: 45%;
+		position: absolute;
+		right: 5%;
+		width: 40%;
+		height: 100%;
 		border: 1px solid $magnolia-black;
 		border-radius: 5px;
 		opacity: 0;
@@ -707,6 +720,8 @@ a {
 		&.show {
 			opacity: 1;
 		}
+		
+	
 	}
 
 	&__maps-big-card {
@@ -714,7 +729,7 @@ a {
 		flex-direction: column;
 		position: absolute;
 		padding: 3em 2em;
-		width: 35%;
+		width: 100%;
 
 		& h3 {
 			padding-left: 1em;
@@ -779,11 +794,10 @@ a {
 	}
 
 	&__maps-small {
-		padding: 0 10em;
 		display: flex;
-		justify-content: center;
+		justify-content: flex-end;
 		gap: 1em;
-		width: 100%;
+		width: 85%;
 	}
 
 	&__maps-small-cards {
@@ -792,7 +806,7 @@ a {
 
 	&__maps-small-box {
 		position: relative;
-		width: 45%;
+		width: 35%;
 		padding-top: 2em;
 
 		& .small-map {
@@ -828,6 +842,27 @@ a {
 			transform: scale(2);
 		}
 	}
+
+	&__maps-cards-mobile {
+		display: none;
+	}
+
+	&__bg-img {
+		position: absolute;
+		bottom: -50px;
+		left: -150px;
+		max-width: 400px;
+		width: 100%;
+		height: auto;
+		opacity: 0.2;
+		transform: scaleX(-1);
+		z-index: -10;
+		transition: opacity .4s;
+
+		&.opacity {
+			opacity: .05;
+		}
+	}
 }
 
 .contact {
@@ -838,16 +873,7 @@ a {
 	align-items: center;
 	background-color: $magnolia-magnolia;
 
-	&__bg-img {
-		position: absolute;
-		top: -250px;
-		left: -150px;
-		max-width: 400px;
-		width: 100%;
-		height: auto;
-		opacity: 0.2;
-		transform: scaleX(-1);
-	}
+
 
 	&__title {
 		padding: 2em;
