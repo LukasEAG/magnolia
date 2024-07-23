@@ -947,6 +947,7 @@ a {
 	}
 
 	&__map {
+		position: relative;
 		margin: 2em 0;
 		display: flex;
 		justify-content: center;
@@ -957,6 +958,19 @@ a {
 			max-width: 250px;
 			width: 100%;
 			height: auto;
+		}
+
+	}
+
+	&__map-point {
+		position: absolute;
+		padding: 1em 1.6em;
+		top: 56%;
+		left: 49%;
+		cursor: pointer;
+
+		& span {
+			font-size: 1.6rem;
 		}
 	}
 }
