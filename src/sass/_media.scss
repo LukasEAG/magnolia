@@ -347,6 +347,11 @@
 				margin: 0 3em;
 				padding: 0;
 			}
+
+            &__maps {
+                flex-direction: column;
+                align-self: flex-end;
+            }
 		}
 
 		.contact {
