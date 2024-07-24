@@ -3,9 +3,6 @@
 @mixin queries {
 	@media (max-width: 1200px) {
 		.about-us {
-			&__title {
-				margin: 10em 0 5em 4em;
-			}
 			&__content {
 				margin: 3em 4em 0;
 			}
@@ -37,9 +34,6 @@
 	}
 	@media (max-width: 1100px) {
 		.about-us {
-			&__title {
-				margin: 10em 0 5em 2em;
-			}
 			&__content {
 				margin: 3em 2em 0;
 			}
@@ -97,11 +91,16 @@
 				margin-right: 1.2em;
 
 				& button {
-					font-size: 3rem;
+					padding: 0.5em;
 					background-color: transparent;
 					color: $magnolia-black;
 					border: none;
 					cursor: pointer;
+
+					& svg {
+						width: 2.6em;
+						height: 2.6em;
+					}
 				}
 			}
 
@@ -158,9 +157,24 @@
 				list-style: none;
 
 				& a {
+					padding: 1em 2em;
 					font-size: 2rem;
 					text-decoration: none;
 					color: $magnolia-black;
+
+					& svg {
+						width: 3em;
+						height: 3em;
+					}
+				}
+
+				& :last-of-type {
+					& a {
+						display: inline-block;
+						padding: 0;
+						width: 100%;
+						height: 100%;
+					}
 				}
 			}
 
@@ -254,18 +268,42 @@
 				}
 			}
 		}
+		.cookie-baner {
+			&__text {
+				font-size: 1.4rem;
+			}
+
+			&__btn {
+				font-size: 1.2rem;
+			}
+		}
 	}
 	@media (max-width: 769px) {
-		.rooms {
-			&__gallery-zoom-box {
-				& button {
-					font-size: 3rem;
-				}
+		.area {
+			&__point-river {
+				left: 53%;
+				top: 31%;
+			}
+			&__point-lake {
+				left: 27%;
+				top: 56%;
 			}
 		}
 		.contact {
 			&__box {
 				flex-direction: column-reverse;
+			}
+		}
+		.cookie-baner {
+			padding: 2em 1em;
+
+			&__btns {
+				display: flex;
+				flex-direction: column;
+			}
+
+			&__btn {
+				margin: 0.5em;
 			}
 		}
 	}
@@ -326,6 +364,7 @@
 
 			&__gallery-box {
 				& button {
+					display: flex;
 					padding: 0.4em 0.6em;
 					max-width: 110px;
 
@@ -337,7 +376,10 @@
 
 			&__gallery-zoom-box {
 				& button {
-					font-size: 2.5rem;
+					& svg {
+						width: 2.4em;
+						height: 2.4em;
+					}
 				}
 			}
 		}
@@ -348,10 +390,15 @@
 				padding: 0;
 			}
 
-            &__maps {
-                flex-direction: column;
-                align-items: flex-end;
-            }
+			&__maps {
+				flex-direction: column;
+				align-items: flex-end;
+			}
+
+			&__point-river {
+				left: 53%;
+				top: 31%;
+			}
 		}
 
 		.contact {
@@ -383,6 +430,31 @@
 				& span {
 					font-size: 1.2rem;
 				}
+			}
+		}
+	}
+	@media (max-width: 360px) {
+		.rooms {
+			&__gallery-box {
+				& button {
+					padding: 0.4em;
+				}
+			}
+			&__room-one {
+				left: 36%;
+			}
+
+			&__room-two {
+				left: 5%;
+			}
+			&__room-three {
+				right: 5%;
+			}
+
+			&__room-four,
+			&__kitchen,
+			&__bathroom {
+				top: 49%;
 			}
 		}
 	}
@@ -454,8 +526,6 @@
 			&__offer-list-item {
 				font-size: 1.6rem;
 			}
-
-			
 		}
 
 		.area {

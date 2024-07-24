@@ -2,10 +2,21 @@
 @use '../sass/colors' as *;
 
 @font-face {
-	font-family: 'HoneyScriptLight';
+	font-family: "Honey Script";
 	src: url(../../fonts/HoneyScript-Light.ttf);
 }
 
+@font-face {
+	font-family: "Ibarra Real Nova";
+	src: url(../../fonts/IbarraRealNova-VariableFont_wght.ttf);
+}
+
+@font-face {
+	font-family: "Lilita One", ;
+	src: url(../../fonts/LilitaOne-Regular.ttf);
+
+
+}
 *,
 *::before,
 *::after {
@@ -153,24 +164,23 @@ a {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		padding: 0 1em;
 		height: 100%;
-		background-color: $magnolia-magnolia;
-		color: $magnolia-dark;
-		transition: background-color 0.4s;
 
-		& a {
-			font-size: 3.6rem;
+		& svg {
+			padding: .5em;
+			width: 5em;
+			height: 100%;
 			color: $magnolia-dark;
-			background-color: transparent;
+			background-color: $magnolia-magnolia;
 			cursor: pointer;
-			transition: color 0.4s;
+			transition: background-color .4s, color 0.4s;
+
+			&:hover {
+				color: $magnolia-black;
+				background-color: $magnolia-white;
+			}
 		}
 
-		&:hover {
-			color: $magnolia-black;
-			background-color: $magnolia-white;
-		}
 	}
 
 	&__bar-reservation {
@@ -183,7 +193,7 @@ a {
 
 		& a {
 			font-size: 1.6rem;
-			font-family: 'Ibarra Real Nova';
+			font-family: 'Ibarra Real Nova', serif;
 			text-transform: uppercase;
 			color: $magnolia-magnolia;
 			cursor: pointer;
@@ -250,7 +260,7 @@ a {
 		display: flex;
 		align-items: center;
 		height: 15%;
-		font-family: 'HoneyScriptLight', serif;
+		font-family: 'Honey Script', serif;
 		font-size: 5rem;
 		color: $magnolia-pink-light;
 		background-color: rgba($magnolia-pink, 0.7);
@@ -277,10 +287,15 @@ a {
 		left: -140px;
 		rotate: 90deg;
 		transform: scaleX(-1);
-		max-height: 865px;
-		max-width: 603px;
+		max-height: 365px;
+		max-width: 530px;
 		opacity: 0.2;
 		z-index: -10;
+
+		& img {
+			width: 100%;
+			height: auto;
+		}
 	}
 
 	&__title {
@@ -326,6 +341,7 @@ a {
 		& img {
 			padding: 2em;
 			max-width: 85px;
+			height: auto;
 		}
 
 		&.odd {
@@ -337,7 +353,6 @@ a {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		align-items: center;
 		margin: 3em 10em 0;
 
 		& a {
@@ -351,6 +366,8 @@ a {
 		}
 
 		& span {
+			display: flex;
+			align-self:center;
 			margin: .2em 0;
 			font-weight: 700;
 
@@ -440,6 +457,8 @@ a {
 		max-width: 600px;
 
 		& img {
+			width: 100%;
+			height: auto;
 			padding: 0 0.5em;
 			border-radius: 5px;
 		}
@@ -540,7 +559,6 @@ a {
 			display: flex;
 			position: relative;
 			padding:  0.3em;
-			font-size: 4rem;
 			color: $magnolia-black;
 			background-color: $magnolia-magnolia;
 			border: none;
@@ -549,6 +567,11 @@ a {
 			white-space: nowrap;
 			cursor: pointer;
 			z-index: 2;
+
+			& svg {
+				width: 3em;
+				height: 3em;
+			}
 
 			&.prev {
 				margin-right: 0.3em;
@@ -667,6 +690,7 @@ a {
 
 			& img {
 				height: 30px;
+				width: 15px;
 			}
 		}
 	}
@@ -824,6 +848,7 @@ a {
 
 			& img {
 				height: 30px;
+				width: 15px;
 			}
 		}
 	}
@@ -924,9 +949,14 @@ a {
 		align-content: center;
 
 		& h3 {
+			display: flex;
 			padding-bottom: 0.5em;
 			font-size: 2rem;
 			font-weight: bold;
+
+			& svg {
+				margin-right: .3em;
+			}
 		}
 
 		& span {
@@ -972,6 +1002,63 @@ a {
 		& span {
 			font-size: 1.6rem;
 		}
+	}
+}
+
+.cookie-baner {
+	position: fixed;
+	bottom: 0;
+	padding: 2em 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background-color: $magnolia-dark;
+	color: $magnolia-white;
+	z-index: 100;
+
+	& p, button {
+		font-family: 'Ibarra Real Nova', serif;
+	}
+
+	&__text {
+		font-size: 1.8rem;
+		text-align: justify;
+	}
+
+	&__btns {
+		margin-left: 2em;
+	}
+
+	&__btn {
+		margin: 0 .5em;
+		padding: .5em 2em;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: $magnolia-black;
+		background-color: $magnolia-white;
+		border: none;
+		border-radius: 5px;
+		transition: background-color .4s, transform .4s;
+		cursor: pointer;
+
+
+		&:hover {
+			transform: scale(.9);
+			
+		}
+		&--accept:hover {
+			color: $magnolia-white;
+			background-color: rgb(42, 148, 42);
+		}
+		&--decline:hover {
+			color: $magnolia-white;
+			background-color: tomato;
+		}
+	}
+
+	&.show {
+		display: flex;
 	}
 }
 

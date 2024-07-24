@@ -1,12 +1,3 @@
-//area map pointer
-
-const mapPoint = document.querySelectorAll('.point-on-map')
-const mapsCardsBox = document.querySelector('.area__maps-big-cards')
-const mobileMapsCard = document.querySelector('.area__maps-cards-mobile')
-const areaBgImg = document.querySelector('.area__bg-img')
-
-const cardContainer = document.createElement('div')
-
 const dataObject = {
 	church: {
 		title: 'Kościół św. Aleksego',
@@ -82,11 +73,11 @@ const dataObject = {
 		webLinkName: 'Korona Gór Świętokrzyskich - Fajna Ryba',
 	},
 
-    river: {
-        title: 'Spływ kajakowy - Pilicą',
-        img: './dist/img/splyw.jpg',
-        text: 'Spływy kajakowe rzeką Pilicą w Przedborzu to niezapomniana przygoda, która łączy w sobie piękno przyrody, aktywny wypoczynek i odrobinę adrenaliny. Rzeka Pilica, będąca jedną z najdłuższych rzek w Polsce, przepływa przez malownicze tereny, oferując kajakarzom niezapomniane widoki i wrażenia. Trasa spływu jest różnorodna i pełna niespodzianek. Kajakarze mogą podziwiać liczne zakola, wyspy i piaszczyste plaże, które zachęcają do krótkich przerw i odpoczynku. Organizatorzy spływów oferują różne opcje tras, od kilkugodzinnych wycieczek po kilkudniowe wyprawy.',
-        list1: '',
+	river: {
+		title: 'Spływ kajakowy - Pilicą',
+		img: './dist/img/splyw.jpg',
+		text: 'Spływy kajakowe rzeką Pilicą w Przedborzu to niezapomniana przygoda, która łączy w sobie piękno przyrody, aktywny wypoczynek i odrobinę adrenaliny. Rzeka Pilica, będąca jedną z najdłuższych rzek w Polsce, przepływa przez malownicze tereny, oferując kajakarzom niezapomniane widoki i wrażenia. Trasa spływu jest różnorodna i pełna niespodzianek. Kajakarze mogą podziwiać liczne zakola, wyspy i piaszczyste plaże, które zachęcają do krótkich przerw i odpoczynku. Organizatorzy spływów oferują różne opcje tras, od kilkugodzinnych wycieczek po kilkudniowe wyprawy.',
+		list1: '',
 		list2: '',
 		list3: '',
 		list4: '',
@@ -99,98 +90,8 @@ const dataObject = {
 		houersSun: 'Całą dobe',
 		webLink: 'https://meandrypilicy.pl/oferta-splywy-kajakowe-lodzkie/splywy-kajakowe/przedborz-leg-reczynski',
 		webLinkName: 'Spływy Kajakowe Przedbórz',
-
-    }
+	},
 }
-
-const cardBody = body => {
-	return `
-                                <div class="area__card-title">
-                                    <img src="${body.img}" alt="">
-                                    <h3>${body.title}</h3>
-
-                                </div>
-                                <p>${body.text}
-                                <ul>
-                                    ${body.list1}
-                                    ${body.list2} 
-                                    ${body.list3}
-                                    ${body.list4}
-                                    ${body.list5}
-                                    ${body.list6}       
-                                </ul>
-                                </p>
-                                <div class="area__card-big-info-box">
-                                    <div class="area__card-adress">
-
-                                        <a href=""><i class="ti ti-map-2"></i> <span>${body.adress1} </span>
-                                            <span>${body.adress2}</span></a>
-
-                                    </div>
-                                    <div class="area__card-open-hours">
-                                        <i class="ti ti-clock-hour-10"></i>
-                                        <span>Pon - Pt: ${body.houersWeek} /</span>
-                                        <span>Sob: ${body.houersSat} /</span>
-                                        <span>Nd: ${body.houersSun}</span>
-                                    </div>
-                                    <div class="area__card-link">
-
-                                        <a target="_blank"
-                                            href="${body.webLink}">
-                                            <i class="ti ti-link"></i><span>${body.webLinkName}</span></a>
-                                    </div>
-                            `
-}
-
-const createCard = value => {
-	setTimeout(function () {
-		cardContainer.className = 'area__maps-big-card'
-		cardContainer.innerHTML = cardBody(value)
-
-        if(window.innerWidth > 992) {
-
-            mapsCardsBox.appendChild(cardContainer)
-            mapsCardsBox.classList.add('show')
-        } else {
-            mobileMapsCard.appendChild(cardContainer)
-            mobileMapsCard.classList.add('show')
-            areaBgImg.classList.add('opacity')
-
-        }
-	}, 400)
-}
-
-mapPoint.forEach(point => {
-	point.addEventListener('click', () => {
-
-        if (window.innerWidth > 992) {
-
-            mapsCardsBox.classList.remove('show')
-        } else {
-            mobileMapsCard.classList.remove('show')
-            areaBgImg.classList.remove('opacity')
-        }
-		cardContainer.remove()
-		mapsCardsBox.scrollTop = 0
-
-		for ([key, value] of Object.entries(dataObject)) {
-			if (point.value === key) {
-				createCard(value)
-			}
-		}
-	})
-})
-
-// rooms gallery
-
-const body = document.querySelector('body')
-const gallery = document.querySelector('.rooms__gallery-zoom')
-const galleryBox = document.querySelector('.rooms__gallery-zoom-box')
-const openGalleryBtns = document.querySelectorAll('[data-btn-open-gallery]')
-const galleryBtn = document.querySelectorAll('[data-gallery-button]')
-const closeGalleryBtn = document.querySelector('[data-btn-close-gallery]')
-const galleryNextBtn = document.querySelector('[data-gallery-button="next"]')
-const galleryList = document.createElement('div')
 
 const galleryObject = {
 	room1: {
@@ -230,6 +131,101 @@ const galleryObject = {
 	},
 }
 
+const mapPoint = document.querySelectorAll('.point-on-map')
+const mapsCardsBox = document.querySelector('.area__maps-big-cards')
+const mobileMapsCard = document.querySelector('.area__maps-cards-mobile')
+const areaBgImg = document.querySelector('.area__bg-img')
+const cardContainer = document.createElement('div')
+
+const body = document.querySelector('body')
+const gallery = document.querySelector('.rooms__gallery-zoom')
+const galleryBox = document.querySelector('.rooms__gallery-zoom-box')
+const openGalleryBtns = document.querySelectorAll('[data-btn-open-gallery]')
+const galleryBtn = document.querySelectorAll('[data-gallery-button]')
+const closeGalleryBtn = document.querySelector('[data-btn-close-gallery]')
+const galleryNextBtn = document.querySelector('[data-gallery-button="next"]')
+const galleryList = document.createElement('div')
+
+const burgerBtn = document.querySelector('[data-burger-btn]')
+const closeMobileBtn = document.querySelector('[data-mobile-close-btn]')
+const mobileMenu = document.querySelector('[data-mobile-menu]')
+const mobileMenuItems = document.querySelectorAll('.nav__mobile-menu-item')
+
+const footerYear = document.querySelector('.footer__year')
+
+const cookies = document.querySelector('.cookie-baner')
+const cookieBtns = document.querySelectorAll('.cookie-baner__btn')
+
+
+const cardBody = body => {
+	return `
+                                <div class="area__card-title">
+                                    <img src="${body.img}" alt="">
+                                    <h3>${body.title}</h3>
+                                </div>
+                                <p>${body.text}
+                                <ul>
+                                    ${body.list1}
+                                    ${body.list2} 
+                                    ${body.list3}
+                                    ${body.list4}
+                                    ${body.list5}
+                                    ${body.list6}       
+                                </ul>
+                                </p>
+                                <div class="area__card-big-info-box">
+                                    <div class="area__card-adress">
+                                        <a href=""><i class="ti ti-map-2"></i> <span>${body.adress1} </span>
+                                            <span>${body.adress2}</span></a>
+                                    </div>
+                                    <div class="area__card-open-hours">
+                                        <i class="ti ti-clock-hour-10"></i>
+                                        <span>Pon - Pt: ${body.houersWeek} /</span>
+                                        <span>Sob: ${body.houersSat} /</span>
+                                        <span>Nd: ${body.houersSun}</span>
+                                    </div>
+                                    <div class="area__card-link">
+                                        <a target="_blank"
+                                            href="${body.webLink}">
+                                            <i class="ti ti-link"></i><span>${body.webLinkName}</span></a>
+                                    </div>
+                            `
+}
+
+const createCard = value => {
+	setTimeout(function () {
+		cardContainer.className = 'area__maps-big-card'
+		cardContainer.innerHTML = cardBody(value)
+
+		if (window.innerWidth > 992) {
+			mapsCardsBox.appendChild(cardContainer)
+			mapsCardsBox.classList.add('show')
+		} else {
+			mobileMapsCard.appendChild(cardContainer)
+			mobileMapsCard.classList.add('show')
+			areaBgImg.classList.add('opacity')
+		}
+	}, 400)
+}
+mapPoint.forEach(point => {
+	point.addEventListener('click', () => {
+		if (window.innerWidth > 992) {
+			mapsCardsBox.classList.remove('show')
+		} else {
+			mobileMapsCard.classList.remove('show')
+			mobileMapsCard.scrollIntoView({ behavior: 'smooth', block: 'center' })
+			areaBgImg.classList.remove('opacity')
+		}
+		cardContainer.remove()
+		mapsCardsBox.scrollTop = 0
+
+		for ([key, value] of Object.entries(dataObject)) {
+			if (point.value === key) {
+				createCard(value)
+			}
+		}
+	})
+})
 const galleryBody = gallery => {
 	return ` <img class="rooms__gallery-slide" src="${gallery.img1}" alt="">
              <img class="rooms__gallery-slide" data-active src="${gallery.img2}" alt="">
@@ -276,13 +272,6 @@ galleryBtn.forEach(button => {
 	})
 })
 
-// mobile menu
-
-const burgerBtn = document.querySelector('[data-burger-btn]')
-const closeMobileBtn = document.querySelector('[data-mobile-close-btn]')
-const mobileMenu = document.querySelector('[data-mobile-menu]')
-const mobileMenuItems = document.querySelectorAll('.nav__mobile-menu-item')
-
 burgerBtn.addEventListener('click', () => {
 	mobileMenu.classList.add('show')
 	body.style.overflowY = 'hidden'
@@ -300,14 +289,26 @@ mobileMenuItems.forEach(button => {
 	})
 })
 
-
-// footer yer
-
-const footerYear = document.querySelector('.footer__year')
-
 const handleCurrentYear = () => {
 	const year = new Date().getFullYear()
 	footerYear.innerText = year
 }
 
+
+const cookieAlert = () => {
+	if (document.cookie.includes('Magnolia')) return
+	cookies.classList.add('show')
+
+	cookieBtns.forEach(button => {
+		button.addEventListener('click', () => {
+			cookies.classList.remove('show')
+
+			if (button.dataset.cookieBtn === 'accept') {
+				document.cookie = 'cookieBy= Magnolia; max-age=' + 60 * 60 * 24 * 30
+			}
+		})
+	})
+}
+
+window.addEventListener('load', cookieAlert)
 window.addEventListener('load', handleCurrentYear)
