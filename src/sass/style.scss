@@ -975,4 +975,22 @@ a {
 	}
 }
 
+.footer {
+	position: relative;
+	top: 105px;
+	padding: 1em 0;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background-color: $magnolia-pink-light;
+
+	&__text {
+		font-size: 1.6rem;
+
+		& span {
+			font-size: 1.6rem;
+		}
+	}
+}
+
 @include media.queries;

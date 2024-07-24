@@ -299,3 +299,15 @@ mobileMenuItems.forEach(button => {
 		body.style.overflowY = 'visible'
 	})
 })
+
+
+// footer yer
+
+const footerYear = document.querySelector('.footer__year')
+
+const handleCurrentYear = () => {
+	const year = new Date().getFullYear()
+	footerYear.innerText = year
+}
+
+window.addEventListener('load', handleCurrentYear)

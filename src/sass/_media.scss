@@ -375,6 +375,16 @@
 				align-items: center;
 			}
 		}
+
+		.footer {
+			&__text {
+				font-size: 1.2rem;
+
+				& span {
+					font-size: 1.2rem;
+				}
+			}
+		}
 	}
 	@media (max-width: 320px) {
 		h2 {
