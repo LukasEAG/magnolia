@@ -2,20 +2,18 @@
 @use '../sass/colors' as *;
 
 @font-face {
-	font-family: "Honey Script";
+	font-family: 'Honey Script';
 	src: url(../../fonts/HoneyScript-Light.ttf);
 }
 
 @font-face {
-	font-family: "Ibarra Real Nova";
+	font-family: 'Ibarra Real Nova';
 	src: url(../../fonts/IbarraRealNova-VariableFont_wght.ttf);
 }
 
 @font-face {
-	font-family: "Lilita One", ;
+	font-family: 'Lilita One';
 	src: url(../../fonts/LilitaOne-Regular.ttf);
-
-
 }
 *,
 *::before,
@@ -167,20 +165,19 @@ a {
 		height: 100%;
 
 		& svg {
-			padding: .5em;
+			padding: 0.5em;
 			width: 5em;
 			height: 100%;
 			color: $magnolia-dark;
 			background-color: $magnolia-magnolia;
 			cursor: pointer;
-			transition: background-color .4s, color 0.4s;
+			transition: background-color 0.4s, color 0.4s;
 
 			&:hover {
 				color: $magnolia-black;
 				background-color: $magnolia-white;
 			}
 		}
-
 	}
 
 	&__bar-reservation {
@@ -360,18 +357,16 @@ a {
 		}
 
 		& p {
-			margin: .5em 0;
+			margin: 0.5em 0;
 			text-align: justify;
 			text-indent: 3ch;
 		}
 
 		& span {
 			display: flex;
-			align-self:center;
-			margin: .2em 0;
+			align-self: center;
+			margin: 0.2em 0;
 			font-weight: 700;
-
-			
 		}
 
 		& span:last-of-type {
@@ -386,7 +381,7 @@ a {
 }
 
 .rooms {
-	padding:2em 0;
+	padding: 2em 0;
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -558,7 +553,7 @@ a {
 		& button {
 			display: flex;
 			position: relative;
-			padding:  0.3em;
+			padding: 0.3em;
 			color: $magnolia-black;
 			background-color: $magnolia-magnolia;
 			border: none;
@@ -584,7 +579,6 @@ a {
 			&:hover {
 				transform: scale(0.9);
 			}
-
 		}
 	}
 
@@ -744,8 +738,6 @@ a {
 		&.show {
 			opacity: 1;
 		}
-		
-	
 	}
 
 	&__maps-big-card {
@@ -882,10 +874,10 @@ a {
 		opacity: 0.2;
 		transform: scaleX(-1);
 		z-index: -10;
-		transition: opacity .4s;
+		transition: opacity 0.4s;
 
 		&.opacity {
-			opacity: .05;
+			opacity: 0.05;
 		}
 	}
 }
@@ -897,8 +889,6 @@ a {
 	justify-content: center;
 	align-items: center;
 	background-color: $magnolia-magnolia;
-
-
 
 	&__title {
 		padding: 2em;
@@ -955,7 +945,7 @@ a {
 			font-weight: bold;
 
 			& svg {
-				margin-right: .3em;
+				margin-right: 0.3em;
 			}
 		}
 
@@ -967,13 +957,21 @@ a {
 
 	&__media-icons {
 		& a {
-			font-size: 2.6rem;
+			display: inline-block;
 			background-color: transparent;
 			border: none;
 			cursor: pointer;
+			transition: transform .4s;
 		}
 
+		& a:hover {
+			transform: scale(1.5);
+		}
 
+		& svg {
+			width: 3rem;
+			height: auto;
+		}
 	}
 
 	&__map {
@@ -989,7 +987,6 @@ a {
 			width: 100%;
 			height: auto;
 		}
-
 	}
 
 	&__map-point {
@@ -1017,7 +1014,8 @@ a {
 	color: $magnolia-white;
 	z-index: 100;
 
-	& p, button {
+	& p,
+	button {
 		font-family: 'Ibarra Real Nova', serif;
 	}
 
@@ -1031,21 +1029,19 @@ a {
 	}
 
 	&__btn {
-		margin: 0 .5em;
-		padding: .5em 2em;
+		margin: 0 0.5em;
+		padding: 0.5em 2em;
 		text-transform: uppercase;
 		font-weight: 700;
 		color: $magnolia-black;
 		background-color: $magnolia-white;
 		border: none;
 		border-radius: 5px;
-		transition: background-color .4s, transform .4s;
+		transition: background-color 0.4s, transform 0.4s;
 		cursor: pointer;
 
-
 		&:hover {
-			transform: scale(.9);
-			
+			transform: scale(0.9);
 		}
 		&--accept:hover {
 			color: $magnolia-white;

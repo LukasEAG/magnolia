@@ -16,6 +16,7 @@ const dataObject = {
 		houersSun: '1000-1400',
 		webLink: 'https://www.parafiaprzedborz.info.pl/',
 		webLinkName: 'Kościół św. Aleksego w Przedborzu ',
+		link: 'https://maps.app.goo.gl/2M3J2RWp5k7PXAxm6'
 	},
 
 	museum: {
@@ -35,6 +36,7 @@ const dataObject = {
 		houersSun: '',
 		webLink: 'https://www.facebook.com/p/Muzeum-Ludowe-w-Przedborzu-100065057167948/',
 		webLinkName: 'Muzeum Ludowe w Przedborzu Facebook',
+		link: 'https://maps.app.goo.gl/DEtYCc5QpTNVPCzN8'
 	},
 	lake: {
 		title: 'Kąpielisko nad zalewem ',
@@ -46,13 +48,14 @@ const dataObject = {
 		list4: '<li>wypożyczalnie sprzętu wodnego,</li>',
 		list5: '<li>zaplecze gastronomiczne,</li>',
 		list6: '<li>miejsce na ognisko,</li>',
-		adress1: 'Turystyczna,',
+		adress1: 'Częstochowska 135,',
 		adress2: '97-570 Przedbórz',
 		houersWeek: '1100-1900',
 		houersSat: '1100-1900',
 		houersSun: '1100-1900',
 		webLink: 'https://sk.gis.gov.pl/kapielisko/185',
 		webLinkName: 'Serwis kąpieliskowy - zbornik w Przedborzu',
+		link: 'https://maps.app.goo.gl/SGvCfS93g3uuGFrEA'
 	},
 	mountain: {
 		title: 'Fajna ryba - 347 m n.p.m. ',
@@ -64,13 +67,14 @@ const dataObject = {
 		list4: '',
 		list5: '',
 		list6: '',
-		adress1: 'Turystyczna,',
+		adress1: '',
 		adress2: '97-570 Przedbórz',
 		houersWeek: 'Całą dobe',
 		houersSat: 'Całą dobe',
 		houersSun: 'Całą dobe',
 		webLink: 'https://kgs.info.pl/fajna-ryba',
 		webLinkName: 'Korona Gór Świętokrzyskich - Fajna Ryba',
+		link: 'https://maps.app.goo.gl/HSwksVqL1nMMQqTT7'
 	},
 
 	river: {
@@ -90,6 +94,7 @@ const dataObject = {
 		houersSun: 'Całą dobe',
 		webLink: 'https://meandrypilicy.pl/oferta-splywy-kajakowe-lodzkie/splywy-kajakowe/przedborz-leg-reczynski',
 		webLinkName: 'Spływy Kajakowe Przedbórz',
+		link: ''
 	},
 }
 
@@ -157,7 +162,12 @@ const cookies = document.querySelector('.cookie-baner')
 const cookieBtns = document.querySelectorAll('.cookie-baner__btn')
 
 
+
+
+
 const cardBody = body => {
+	const mapLink = body.link ? `<a href="${body.link}" target="_blank"><i class="ti ti-map-2"></i> <span>${body.adress1} </span><span>${body.adress2}</span></a>` : `<span><i class="ti ti-map-2"></i> <span>${body.adress1} </span><span>${body.adress2}</span></span>`;
+
 	return `
                                 <div class="area__card-title">
                                     <img src="${body.img}" alt="">
@@ -175,8 +185,7 @@ const cardBody = body => {
                                 </p>
                                 <div class="area__card-big-info-box">
                                     <div class="area__card-adress">
-                                        <a href=""><i class="ti ti-map-2"></i> <span>${body.adress1} </span>
-                                            <span>${body.adress2}</span></a>
+                                       ${mapLink}
                                     </div>
                                     <div class="area__card-open-hours">
                                         <i class="ti ti-clock-hour-10"></i>
@@ -209,8 +218,11 @@ const createCard = value => {
 }
 mapPoint.forEach(point => {
 	point.addEventListener('click', () => {
+
 		if (window.innerWidth > 992) {
 			mapsCardsBox.classList.remove('show')
+			mapsCardsBox.scrollIntoView({ behavior: 'smooth', block: 'center' })
+
 		} else {
 			mobileMapsCard.classList.remove('show')
 			mobileMapsCard.scrollIntoView({ behavior: 'smooth', block: 'center' })
@@ -226,10 +238,16 @@ mapPoint.forEach(point => {
 		}
 	})
 })
+
+
+
+
 const galleryBody = gallery => {
-	return ` <img class="rooms__gallery-slide" src="${gallery.img1}" alt="">
+	const gallerySlideLimit = gallery.img3 ? ` <img class="rooms__gallery-slide" src="${gallery.img1}" alt="">
              <img class="rooms__gallery-slide" data-active src="${gallery.img2}" alt="">
-            <img class="rooms__gallery-slide " src="${gallery.img3}" alt="">`
+            <img class="rooms__gallery-slide " src="${gallery.img3}" alt="">` : ` <img class="rooms__gallery-slide" src="${gallery.img1}" alt="">
+             <img class="rooms__gallery-slide" data-active src="${gallery.img2}" alt=""> `
+	return  gallerySlideLimit
 }
 
 const createGallery = value => {
